@@ -1,28 +1,37 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vendor_list/helper/language_helper.dart';
-import 'package:vendor_list/views/about.dart';
-import 'package:vendor_list/views/companyList.dart';
-import 'package:vendor_list/views/contact.dart';
-import 'package:vendor_list/views/home.dart';
-import 'package:vendor_list/views/info.dart';
-import 'package:vendor_list/views/search_screen.dart';
-import 'package:vendor_list/views/welcome_screen.dart';
+import 'package:vendor_list/screens/home/view/home.dart';
+import 'package:vendor_list/screens/splash/welcome_screen.dart';
+
 import 'package:vendor_list/widgets/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
-import 'models/about/about_response.dart';
-import 'models/company_model.dart';
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  // await Firebase.initializeApp();
+  // AwesomeDialog(context: context,dialogType: DialogType.SUCCES,title: message.notification.title,body: Text(message.notification.body))..show();
 
-void main() {
+  print("================================/nHandling a background message: ${message.messageId}/n============================================");
+}
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(MyApp());
+  runApp(Phoenix(child: MyApp()));
+
 }
 
 class MyApp extends StatefulWidget {
-  // This widget is the root of your application
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -33,7 +42,7 @@ class _MyAppState extends State<MyApp> {
   Future<void> _getFutureBool() {
     return Future.delayed(Duration(milliseconds: 3000))
         .then((onValue) => setState(() {
-// Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context)=>Home())));
+
               future = true;
             }));
   }
@@ -53,29 +62,10 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: "Vendor List",
         theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
           primarySwatch: Colors.blue,
         ),
         home:
-          // AboutScreen(),
-            // CompanyList(section: "bla",id: 2,),
-            // SearchScreen(),
-
             !future == true ? WelcomeScreen() : Home(),
-// routes: {
-//   '/':(context)=>Home(),
-// },
-        // WelcomeScreen(),
-        // CompanyList(section: "Home Automation",),
-        // Info(section: "Home Automation",),
       ),
     );
   }

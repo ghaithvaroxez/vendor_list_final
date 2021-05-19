@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:vendor_list/widgets/widgets.dart';
 
 class Language extends ChangeNotifier{
-  bool _language=false;
+  bool _language=english;
   get getLanguage=>_language;
   changeLanguage()
   {

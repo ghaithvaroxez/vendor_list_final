@@ -7,9 +7,16 @@ class HttpService {
   static Future<http.Response> getRequest(endPoint) async {
     http.Response response;
     final url = Uri.parse('$baseUrl$endPoint');
+
     // final url =Uri.parse("http://vindorlist.sourcecode-ai.com/api/getSearchCompanies?name=ar");
     try {
-      response = await http.get(url);
+      Map<String ,String> headers;
+     //  endPoint=="screens.contact" ?
+     //  headers={"lang":"en"}
+     // :
+      headers={"lang":english?"en":"ar"};
+      print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"+url.toString()+headers.toString()+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+      response = await http.get(url,headers: headers);
       print(response.statusCode);
       print(endPoint);
     } catch (e) {
@@ -24,7 +31,9 @@ class HttpService {
     final url = Uri.parse('$baseUrl$endPoint');
     // final url =Uri.parse("http://vindorlist.sourcecode-ai.com/api/getSearchCompanies?name=ar");
     try {
-      response = await http.post(url);
+      Map<String ,String> headers={"lang":english?"en":"ar"};
+      print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"+url.toString()+headers.toString()+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+      response = await http.post(url,headers: headers);
       print(response.statusCode);
       print(endPoint);
     } catch (e) {

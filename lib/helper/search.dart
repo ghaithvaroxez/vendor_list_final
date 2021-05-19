@@ -1,9 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:vendor_list/models/company_list/company_list_response.dart';
-import 'package:vendor_list/models/company_model.dart';
-import 'package:vendor_list/models/company_seearch/company_search_repository.dart';
-import 'package:vendor_list/views/info.dart';
+import 'package:vendor_list/screens/company_list/model/company_list_response.dart';
 import 'package:vendor_list/widgets/widgets.dart';
 
 List<Company> myCom = [];
@@ -106,7 +103,7 @@ class DataSearch extends SearchDelegate<String> {
       //
       //   context: context,
       //   company: myCom[index],
-      //   // new Company(image: "",companyName: suggestion[index],ownerName: "Mohammad Bayzid",phoneNumber: "+974 55 91 45 36",firstLocation:"Media Tower" ,secondLocation: "Alrayan - Doha -Qatar",url:"www.mbayzid.com" ,email: "info@mbayzid.com"),
+      //   // new Company(image: "",companyName: suggestion[index],ownerName: "Mohammad Bayzid",phoneNumber: "+974 55 91 45 36",firstLocation:"Media Tower" ,secondLocation: "Alrayan - Doha -Qatar",url:"www.mbayzid.com" ,email: "screens.info@mbayzid.com"),
       //   section: "Home",
       // s: false),
       //
@@ -129,7 +126,7 @@ class DataSearch extends SearchDelegate<String> {
 //   context: context,
 //   company:
 //   // myCom[index],
-//   new OldCompany(image: "",companyName: suggestion[index].companyName,ownerName: "Mohammad Bayzid",phoneNumber: "+974 55 91 45 36",firstLocation:"Media Tower" ,secondLocation: "Alrayan - Doha -Qatar",url:"www.mbayzid.com" ,email: "info@mbayzid.com"),
+//   new OldCompany(image: "",companyName: suggestion[index].companyName,ownerName: "Mohammad Bayzid",phoneNumber: "+974 55 91 45 36",firstLocation:"Media Tower" ,secondLocation: "Alrayan - Doha -Qatar",url:"www.mbayzid.com" ,email: "screens.info@mbayzid.com"),
 //   section: "Home",
 // s: false,),
     );

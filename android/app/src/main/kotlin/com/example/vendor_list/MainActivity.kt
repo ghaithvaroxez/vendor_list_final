@@ -1,4 +1,4 @@
-package com.example.vendor_list
+package com.source_code.vendor_list
 
 import io.flutter.embedding.android.FlutterActivity
 

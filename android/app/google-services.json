@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906188974433",
+    "project_id": "vendor-list-f2b2f",
+    "storage_bucket": "vendor-list-f2b2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906188974433:android:81bdc11314e8c9fc2ebd20",
+        "android_client_info": {
+          "package_name": "com.source_code.vendor_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906188974433-olco2fsf9ior7fgs7hfbc5lhrv2gr6ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu5Xs1hIH_Q6Y4tOBqokW6jYwrZ0Z2YYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906188974433-olco2fsf9ior7fgs7hfbc5lhrv2gr6ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
