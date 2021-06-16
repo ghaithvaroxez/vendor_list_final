@@ -26,7 +26,7 @@ List<Post> posts=[];
 
   loadData() async {
     posts = await AboutRepository.getAbout();
-
+print(posts[1].body);
     setState(() {
       _loading = false;
     });
@@ -316,7 +316,7 @@ List<Post> posts=[];
                           ),
                         ),
                       ),
-                      SizedBox(height: MediaQuery.of(context).size.height/16,),
+                      // SizedBox(height: MediaQuery.of(context).size.height/16,),
                       ///appBar
 
                       ///companyListBody
@@ -333,15 +333,15 @@ List<Post> posts=[];
                             itemBuilder: (context, index) => Column(
                               children: [
                                 // SizedBox(height: MediaQuery.of(context).size.height/12,),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal:3.0),
-                                  child: Center(child: AutoSizeText(posts[index].title,minFontSize: 23,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold),)),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal:16),
+                                  child: Center(child: AutoSizeText(posts[index].title,minFontSize: 23,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,height: 3),)),
                                 ),
                                 // SizedBox(height: MediaQuery.of(context).size.height/12,),
-                                SizedBox(height: MediaQuery.of(context).size.height/36,),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 2),
-                                  child: AutoSizeText(posts[index].body,minFontSize: 16,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.w300),),
+                                SizedBox(height: MediaQuery.of(context).size.height/100,),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 2),
+                                  child: AutoSizeText(posts[index].body,minFontSize: 16,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.w300,height: 1.5),),
                                 ),
                                 // index<about.addresses.length?iconLabel(
                                 //     context: context,
@@ -544,7 +544,7 @@ List<Post> posts=[];
                         ),
                       ),
                       ///appBar
-                      SizedBox(height: MediaQuery.of(context).size.height/16,),
+                      // SizedBox(height: MediaQuery.of(context).size.height/16,),
                       ///appBar
 
                       ///companyListBody
@@ -561,14 +561,14 @@ List<Post> posts=[];
                             itemBuilder: (context, index) => Column(
                               children: [
 
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                                  child: Center(child: AutoSizeText(posts[index].title,minFontSize: 23,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold),)),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                                  child: Center(child: AutoSizeText(posts[index].title,minFontSize: 23,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.bold,height: 2),textDirection: TextDirection.rtl,)),
                                 ),
-                                SizedBox(height: MediaQuery.of(context).size.height/36,),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 2),
-                                  child: AutoSizeText(posts[index].body,minFontSize: 16,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.w300),),
+                                SizedBox(height: MediaQuery.of(context).size.height/100,),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+                                  child: AutoSizeText(posts[index].body,minFontSize: 16,style: TextStyle(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.w300,height:1.6),textDirection: TextDirection.rtl,),
                                 ),
                                 SizedBox(height: MediaQuery.of(context).size.height/20,),
                                 // index<about.addresses.length?iconLabel(

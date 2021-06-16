@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: "Vendor List",
         theme: ThemeData(
+          fontFamily: 'Tajwal',
           primarySwatch: Colors.blue,
         ),
         home:
